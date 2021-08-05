@@ -1,9 +1,19 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { getSavedCities } from '../utils/localStorage';
 const RecentlySearched = () => {
    return (
-      <Container className="m-2">
-         <h2>Recently searched</h2>
+      <Container className="my-2">
+         <Card>
+            <Card.Body>
+               <Card.Title>Recently Searched:</Card.Title>
+               <ListGroup className="list-group-flush">
+                  {getSavedCities().map((city) => {
+                     <ListGroupItem>{city}</ListGroupItem>;
+                  })}
+               </ListGroup>
+            </Card.Body>
+         </Card>
       </Container>
    );
 };

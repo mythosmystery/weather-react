@@ -16,7 +16,7 @@ const SearchCard = ({ setCity }) => {
       });
    };
    return (
-      <Container className="m-2">
+      <Container className="my-2">
          <Card>
             <Card.Body>
                <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">

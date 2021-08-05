@@ -10,7 +10,7 @@ code {
    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.cityName {
+.caps {
    text-transform: capitalize;
 }
 .list-group-item {

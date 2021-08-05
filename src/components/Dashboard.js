@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { getCurrentWeather } from '../utils/api';
 import moment from 'moment';
@@ -16,24 +16,26 @@ const Dashboard = () => {
    if (isError) return <h2>error</h2>;
    if (isLoading) return <h2>loading...</h2>;
    return (
-      <Row>
-         <Col md={12} lg={3}>
-            <Row>
-               <SearchCard setCity={setCity} />
-            </Row>
-            <Row>
-               <RecentlySearched setCity={setCity} />
-            </Row>
-         </Col>
-         <Col lg={9}>
-            <Row>
-               <CurrentWeather city={city} coord={data.coord} date={currentDate} />
-            </Row>
-            <Row>
-               <FiveDayCard city={city} coord={data.coord} date={currentDate} />
-            </Row>
-         </Col>
-      </Row>
+      <Container fluid>
+         <Row>
+            <Col md={12} lg={3}>
+               <Row>
+                  <SearchCard setCity={setCity} />
+               </Row>
+               <Row>
+                  <RecentlySearched setCity={setCity} />
+               </Row>
+            </Col>
+            <Col lg={9}>
+               <Row>
+                  <CurrentWeather city={city} coord={data.coord} date={currentDate} />
+               </Row>
+               <Row>
+                  <FiveDayCard city={city} coord={data.coord} date={currentDate} />
+               </Row>
+            </Col>
+         </Row>
+      </Container>
    );
 };
 export default Dashboard;
