@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Card, Alert, Form, Button, Container } from 'react-bootstrap';
-const SearchCard = () => {
+const SearchCard = ({ setCity }) => {
    const [formState, setFormState] = useState({ username: '' });
    const [showAlert, setShowAlert] = useState(false);
    const onSubmit = (event) => {
       event.preventDefault();
-      console.log(formState.city);
       if (!formState.city) setShowAlert(true);
+      setCity(formState.city);
    };
    const onChange = (event) => {
       const { name, value } = event.target;
