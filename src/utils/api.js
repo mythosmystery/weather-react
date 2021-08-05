@@ -10,3 +10,8 @@ export const getCurrentWeather = async (city) => {
    if (!res.ok) throw new Error('Failed to fetch');
    return res.json();
 };
+export const getForecast = async ({ lon, lat }) => {
+   const res = await fetch(onecallURL + lat + '&lon=' + lon + '&exclude=hourly,minutely&units=' + units + '&appid=' + key);
+   if (!res.ok) throw new Error('Failed to fetch');
+   return res.json();
+};
