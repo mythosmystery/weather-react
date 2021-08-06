@@ -8,6 +8,7 @@ import SearchCard from './SearchCard';
 import RecentlySearched from './RecentlySearched';
 import CurrentWeather from './CurrentWeather';
 import FiveDayCard from './FiveDayCard';
+import { getSavedCities } from '../utils/localStorage';
 
 const Dashboard = () => {
    const [city, setCity] = useState('Oklahoma City');
@@ -23,7 +24,7 @@ const Dashboard = () => {
                   <SearchCard setCity={setCity} />
                </Row>
                <Row>
-                  <RecentlySearched setCity={setCity} />
+                  <RecentlySearched setCity={setCity} savedCityList={getSavedCities()} />
                </Row>
             </Col>
             <Col lg={9}>

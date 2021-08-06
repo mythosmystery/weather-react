@@ -1,15 +1,15 @@
 import React from 'react';
 import { Container, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { getSavedCities } from '../utils/localStorage';
-const RecentlySearched = () => {
+const RecentlySearched = ({ savedCityList }) => {
    return (
       <Container className="my-2">
          <Card>
             <Card.Body>
                <Card.Title>Recently Searched:</Card.Title>
                <ListGroup className="list-group-flush">
-                  {getSavedCities().map((city) => {
-                     <ListGroupItem>{city}</ListGroupItem>;
+                  {savedCityList.map((city) => {
+                     return <ListGroupItem key={city}>{city}</ListGroupItem>;
                   })}
                </ListGroup>
             </Card.Body>

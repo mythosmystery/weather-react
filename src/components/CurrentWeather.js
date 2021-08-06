@@ -3,6 +3,7 @@ import { Container, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { iconURL } from '../utils/api';
 import { useQuery } from 'react-query';
 import { getForecast } from '../utils/api';
+import { addCity } from '../utils/localStorage';
 import moment from 'moment-timezone';
 const CurrentWeather = ({ coord, city, date }) => {
    const { isError, isLoading, data } = useQuery(['current', coord.lon], () => getForecast(coord));
@@ -16,6 +17,7 @@ const CurrentWeather = ({ coord, city, date }) => {
    if (isError) return <h2>error</h2>;
    if (isLoading) return <h2>loading...</h2>;
    const { current, timezone } = data;
+   addCity(city);
    return (
       <>
          <Container className="my-2">
