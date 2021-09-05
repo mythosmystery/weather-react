@@ -13,9 +13,9 @@ const FiveDayCard = ({ city, coord }) => {
       <Container className="my-2">
          <Card>
             <Card.Body>
-               <Card.Title className="caps">{city}'s 5 Day Forecast:</Card.Title>
+               <Card.Title className="caps">{city}'s 6 Day Forecast:</Card.Title>
                <Row>
-                  {data.daily.map((data) => {
+                  {data.daily.map(data => {
                      return (
                         <Col key={data.dt}>
                            <ForecastCard data={data} />
