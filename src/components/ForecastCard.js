@@ -10,8 +10,8 @@ const ForecastCard = ({ data }) => {
             <img alt="forecast icon" src={iconURL + data.weather[0].icon + '.png'} />
             <p>Temp: {data.temp.day}&deg;F</p>
             <p>Humidity: {data.humidity}%</p>
-            <p>High: {data.temp.max}</p>
-            <p>Low: {data.temp.min}</p>
+            <p>High: {data.temp.max}&deg;</p>
+            <p>Low: {data.temp.min}&deg;</p>
          </Card.Body>
       </Card>
    );
