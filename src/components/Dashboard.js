@@ -11,7 +11,7 @@ import FiveDayCard from './FiveDayCard';
 import { getSavedCities } from '../utils/localStorage';
 
 const Dashboard = () => {
-   const [city, setCity] = useState('Oklahoma City');
+   const [city, setCity] = useState('New York City');
    const currentDate = moment().format('MM/DD/YYYY');
    const { isError, isLoading, data } = useQuery(['cities', city], () => getCurrentWeather(city));
    if (isError) return <h2>error</h2>;
