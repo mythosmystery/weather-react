@@ -8,7 +8,7 @@ const FiveDayCard = ({ city, coord }) => {
    if (isError) return <h2>error</h2>;
    if (isLoading) return <h2>loading...</h2>;
    data.daily.pop();
-   console.log(data);
+   // console.log(data);
    return (
       <Container className="my-2">
          <Card>

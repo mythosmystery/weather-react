@@ -1,17 +1,18 @@
 import React from 'react';
-import { Container, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-const RecentlySearched = ({ savedCityList, setCity }) => {
-   savedCityList.reverse();
+import { Container, Card, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { removeCity } from '../utils/localStorage';
+const RecentlySearched = ({ setCity, savedCityList, setSavedCityList }) => {
    return (
       <Container className="my-2">
          <Card>
             <Card.Body>
                <Card.Title>Recently Searched:</Card.Title>
                <ListGroup className="list-group-flush">
-                  {savedCityList.map(city => {
+                  {savedCityList.reverse().map(city => {
                      return (
-                        <ListGroupItem key={city} onClick={() => setCity(city)}>
-                           {city}
+                        <ListGroupItem key={city}>
+                           <span onClick={() => setCity(city)}>{city}</span>{' '}
+                           <Button onClick={() => setSavedCityList(removeCity(city))}>Remove</Button>
                         </ListGroupItem>
                      );
                   })}
