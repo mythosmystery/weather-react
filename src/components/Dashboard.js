@@ -32,10 +32,10 @@ const Dashboard = () => {
                <Row>
                   <CurrentWeather city={city} coord={data.coord} date={currentDate} />
                </Row>
-               <Row>
-                  <FiveDayCard city={city} coord={data.coord} date={currentDate} />
-               </Row>
             </Col>
+         </Row>
+         <Row>
+            <FiveDayCard city={city} coord={data.coord} date={currentDate} />
          </Row>
       </Container>
    );
