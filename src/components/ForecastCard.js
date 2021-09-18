@@ -6,6 +6,7 @@ const ForecastCard = ({ data }) => {
    return (
       <Card className="bg-primary text-light">
          <Card.Body>
+            <Card.Title>{moment.unix(data.dt).format('dddd')}</Card.Title>
             <Card.Title>{moment.unix(data.dt).format('MM-DD-YY')}</Card.Title>
             <img alt="forecast icon" src={iconURL + data.weather[0].icon + '.png'} />
             <p>Temp: {data.temp.day}&deg;F</p>
